@@ -11,7 +11,9 @@ This has only been tested on Ubuntu 22.04.5
 ## Getting started
 This repository includes the ROS 2 package written in C++ with real time visualization scripts written in Python. There is also an example script for working with prerecorded data in the .db3 format, which is the format for ROS 2 bags.
 
-I recommend reading the ROS 2 documentation to set up your ROS 2 environment and workspace, then adding the package to the workspace within the src folder.
+I recommend reading the ROS 2 documentation to set up your ROS 2 environment and workspace, then adding the package to the workspace within the `cpp_mmwavec/src` folder.
+
+![Radar System](.\media\radar_system.jpg)
 
 ## How to use
 Once ROS 2 has been configured and you have added the cpp_mmwavec package files to the src of your ROS 2 workspace, follow the below instructions.
