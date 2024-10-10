@@ -35,16 +35,16 @@ To use one of the sample real-time visualizations, open a new terminal tab or wi
 
 1. Range-Azimuth FFT: `2d_fft.py`
 ![Range-Azimuth FFT Plot](./media/fft_cfar_xy.png)
-Range-Azimuth data transformed to Cartesian plane. FFT with zero-padding method for angle estimation applied in real-time. CFAR detection without including stationary bin. Person walking towards stationary radar.
+Shown: Range-Azimuth data transformed to Cartesian plane. FFT with zero-padding method for angle estimation applied in real-time. CFAR detection without including stationary bin. Person walking towards stationary radar.
 
 
 2. Range-Azimuth from Capon beamforming: `2d_capon.py`
 ![Range-Azimuth Capon Plot](./media/capon_all.png)
-Range-Azimuth data transformed to Cartesian plane. Capon beamforming applied in real-time. Person walking towards stationary radar.
+Shown: Range-Azimuth data transformed to Cartesian plane. Capon beamforming applied in real-time. Person walking towards stationary radar.
 
 3. Range-doppler FFT: `doppler.py`
 ![Range-Doppler Plot](./media/doppler_no_window.png)
-Range-doppler plot without windowing. Person walking towards stationary radar.
+Shown: Range-doppler plot without windowing. Person walking towards stationary radar.
 
 4. Range FFT: `range.py`
 
