@@ -80,7 +80,7 @@ To record data, open a new terminal tab or window use `ros2 bag record /radar_da
 The is an example Python script to open the .db3 file and plot every 200 frames of a range-doppler plot: `./cpp_mmwavec/post_processing/doppler_plot.py`
 
 ## Configurations
-The IWR1443BOOST radar board has configurable chirps. The ADC sampling rate, number of chirps per frame, and product of receiving and transmitting antennas impact the detection range, velocity, and angle of arrival, respectively. These, along with other parameters can be modified based on the use case. I include 3 configurations in the `./cpp_mmwavec/src/configs` folder as examples.
+The IWR1443BOOST radar board has configurable chirps. The ADC sampling rate, number of chirps per frame, and product of receiving and transmitting antennas impact the detection range, velocity, and angle of arrival calculations, respectively. These, along with other parameters can be modified based on the use case. I include 3 configurations in the `./cpp_mmwavec/src/configs` folder as examples.
 
 Texas Instruments provides a web tool for designing configurations: https://dev.ti.com/gallery/view/mmwave/mmWaveSensingEstimator
 
