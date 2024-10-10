@@ -75,7 +75,7 @@ if __name__ == '__main__':
 
 
 ## Recording data
-To record data, open a new terminal tab or window use `ros2 bag record /radar_data -o [path_to_save]`. This will create a folder at the path specified and create a metadata.yml file and a .db3 file with all of the data from the radar.
+To record data, open a new terminal tab or window use `ros2 bag record /radar_data -o [path_to_save]`. This will create a folder at the path specified and create a `metadata.yml` file and a .db3 file with all of the data from the radar.
 
 The is an example Python script to open the .db3 file and plot every 200 frames of a range-doppler plot: `./cpp_mmwavec/post_processing/doppler_plot.py`
 
