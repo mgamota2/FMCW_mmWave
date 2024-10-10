@@ -2,9 +2,12 @@
 ROS 2 Package (C++) for TI IWR1443BOOST and TI DCA1000EVM FMCW mmWave Radar System
 
 This project is based off of the work done for the RaDICaL SDK: 
+
 https://moodoki.github.io/radical_sdk/
 
 https://publish.illinois.edu/radicaldata/
+
+Firmware for the radar system can be downloaded 
 
 This has only been tested on Ubuntu 22.04.5
 
@@ -87,6 +90,8 @@ Texas Instruments provides a web tool for designing configurations: https://dev.
 This web tool was used for my research, but there is also  [MMWAVE_STUDIO](https://www.ti.com/tool/MMWAVE-STUDIO?utm_source=google&utm_medium=cpc&utm_campaign=epd-rap-null-58700008490712085_mmwave_studio_rsa-cpc-evm-google-ww_en_int&utm_content=mmwave_studio&ds_k=mmwave+studio&DCM=yes&gad_source=1&gclid=Cj0KCQjw05i4BhDiARIsAB_2wfCEeZliLplcd8NMhrxxFYC7qCFcHvjkdJDtNJOY4Ifm5v5MY2t_Q78aAtnXEALw_wcB&gclsrc=aw.ds#overview)
 
 ## Additional resources
+[GitHub for software, hardware, and firmware](https://github.com/moodoki/iwr_raw_rosnode)
+
 [Fundamentals of mmWave](https://www.ti.com/lit/wp/spyy005a/spyy005a.pdf?ts=1727119340010&ref_url=https%253A%252F%252Fwww.google.com%252F)
 
 [FMCW mmWave](https://www.ti.com/content/dam/videos/external-videos/zh-tw/2/3816841626001/5415203482001.mp4/subassets/mmwaveSensing-FMCW-offlineviewing_0.pdf)
