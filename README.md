@@ -21,7 +21,7 @@ I recommend reading the ROS 2 documentation to set up your ROS 2 environment and
 ## How to use
 Once ROS 2 has been configured and you have added the cpp_mmwavec package files to the src of your ROS 2 workspace, follow the below instructions.
 
-The ROS 2 package is defined as "cpp_mmwavec" in the package.xml file, but this can be changed.
+This ROS 2 package is named "cpp_mmwavec". To change the name, file and folder names will have to be changed along with the CMakeLists.txt and package.xml files.
 
 1. Open terminal
 
