@@ -90,7 +90,7 @@ class MmwaveFFTviz(Node):
         range_cube = np.fft.fft(adc_samples, axis=1)
         range_doppler = np.fft.fft(range_cube, axis=0)
         
-        steering_vector = compute_steering_vector(num_ant=12, angle_res=3, angle_rng=90)
+        steering_vector = compute_steering_vector(num_ant=(self.frame_kwargs['n_receivers'] * self.frame_kwargs['n_tdm']), angle_res=3, angle_rng=90)
         n_range_bins = range_doppler.shape[1]
         n_angles = steering_vector.shape[0]
 

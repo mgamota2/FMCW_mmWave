@@ -48,6 +48,32 @@ Range-doppler plot without windowing. Person walking towards stationary radar.
 
 4. Range FFT: `range.py`
 
+### **Important!!**
+When using the sample real time visualization scripts `self.frame_kwargs` must be updated to reflect the radar configuration you are using.
+
+```python
+def set_radar_cfg(self):
+        # Configuration for radar parameters
+        self.frame_kwargs = {
+            'samples_per_chirp': 256,
+            'n_receivers': 4,
+            'n_tdm': 3,
+            'n_chirps_per_frame': 60,
+        }
+```
+
+When using the sample post processing script updates must be made as well, the variables are located in the main loop
+
+```python
+if __name__ == '__main__':
+    # Update these parameters based on your radar configuration
+    samples_per_chirp = 256
+    n_receivers = 4
+    n_tdm = 1
+    n_chirps_per_frame = 128
+```
+
+
 ## Recording data
 To record data, open a new terminal tab or window use `ros2 bag record /radar_data -o [path_to_save]`. This will create a folder at the path specified and create a metadata.yml file and a .db3 file with all of the data from the radar.
 
@@ -59,7 +85,6 @@ The IWR1443BOOST radar board has configurable chirps. The ADC sampling rate, num
 Texas Instruments provides a web tool for designing configurations: https://dev.ti.com/gallery/view/mmwave/mmWaveSensingEstimator
 
 This web tool was used for my research, but there is also  [MMWAVE_STUDIO](https://www.ti.com/tool/MMWAVE-STUDIO?utm_source=google&utm_medium=cpc&utm_campaign=epd-rap-null-58700008490712085_mmwave_studio_rsa-cpc-evm-google-ww_en_int&utm_content=mmwave_studio&ds_k=mmwave+studio&DCM=yes&gad_source=1&gclid=Cj0KCQjw05i4BhDiARIsAB_2wfCEeZliLplcd8NMhrxxFYC7qCFcHvjkdJDtNJOY4Ifm5v5MY2t_Q78aAtnXEALw_wcB&gclsrc=aw.ds#overview)
-
 
 ## Additional resources
 [Fundamentals of mmWave](https://www.ti.com/lit/wp/spyy005a/spyy005a.pdf?ts=1727119340010&ref_url=https%253A%252F%252Fwww.google.com%252F)

@@ -28,7 +28,7 @@ class MmwaveFFTviz(Node):
         self.fft_mag = np.zeros(fft_mag_shape, dtype=np.float32)
         self.pp = pprint.PrettyPrinter(width=100)
 
-        
+        # This determines if the plot is xy or range-angle(polar)
         self.plot = 'xy'
 
 
@@ -95,7 +95,7 @@ class MmwaveFFTviz(Node):
         fft_range_doppler = np.fft.fft(fft_range, axis=0)
 
         
-        # perform FFT over azimuth 
+        # perform FFT over azimuth, zero pad to size n=32 
         az_fft = np.fft.fftshift(np.fft.fft(fft_range_doppler,n=32, axis=2), axes=2)
 
         # Compute Power Spectrum
@@ -107,9 +107,10 @@ class MmwaveFFTviz(Node):
         else:
             final = np.log2(np.sum(az_power, axis=0))  
 
-        cfarred = self.ca_cfar_detection_2d_optimized(final, 35, 5, 30) # Changing these values changes the threshold for detected objects
+        # Changing these values changes the threshold and detection window for detected objects
+        cfarred = self.ca_cfar_detection_2d_optimized(final, 35, 5, 30) 
         
-        return final
+        return cfarred
 
     def ca_cfar_detection_2d_optimized(self, data, num_train, num_guard, threshold_factor):
         num_rows, num_cols = data.shape
@@ -205,7 +206,7 @@ def reshape_frame(data, samples_per_chirp, n_receivers, n_tdm, n_chirps_per_fram
     _data = _data[:, :4] + 1j * _data[:, 4:]
     _data = _data.reshape(n_chirps_per_frame, samples_per_chirp, n_receivers)
 
-    #deinterleve if theres TDM
+    #deinterleve if theres mulitple transmitting antennas
     if n_tdm > 1:
         _data_i = [_data[i::n_tdm, :, :] for i in range(n_tdm)]
         _data = np.concatenate(_data_i, axis=-1)
