@@ -13,7 +13,7 @@ This repository includes the ROS 2 package written in C++ with real time visuali
 
 I recommend reading the ROS 2 documentation to set up your ROS 2 environment and workspace, then adding the package to the workspace within the `cpp_mmwavec/src` folder.
 
-![Radar System](.\media\radar_system.jpg)
+![Radar System](media\radar_system.jpg)
 
 ## How to use
 Once ROS 2 has been configured and you have added the cpp_mmwavec package files to the src of your ROS 2 workspace, follow the below instructions.
@@ -34,16 +34,16 @@ Regarding the config name, if the config is "short_range.cfg" , the config name 
 To use one of the sample real-time visualizations, open a new terminal tab or window at `cpp_mmwavec/scripts` and use `python3 ./doppler.py` to display a range-doppler plot. Included visualization scripts include 
 
 1. Range-Azimuth FFT: `2d_fft.py`
-![Range-Azimuth FFT Plot](.\media\fft_cfar_xy.png)
+![Range-Azimuth FFT Plot](media\fft_cfar_xy.png)
 Range-Azimuth data transformed to Cartesian plane. FFT with zero-padding method for angle estimation applied in real-time. CFAR detection without including stationary bin. Person walking towards stationary radar.
 
 
 2. Range-Azimuth from Capon beamforming: `2d_capon.py`
-![Range-Azimuth Capon Plot](.\media\capon_all.png)
+![Range-Azimuth Capon Plot](media\capon_all.png)
 Range-Azimuth data transformed to Cartesian plane. Capon beamforming applied in real-time. Person walking towards stationary radar.
 
 3. Range-doppler FFT: `doppler.py`
-![Range-Doppler Plot](.\media\doppler_no_window.png)
+![Range-Doppler Plot](media\doppler_no_window.png)
 Range-doppler plot without windowing. Person walking towards stationary radar.
 
 4. Range FFT: `range.py`
