@@ -20,7 +20,7 @@ I recommend reading the ROS 2 documentation to set up your ROS 2 environment and
 
 ## Real Time Visualization GUI
 
-There is a GUI to help you run the whole radar system and generate real time visualizations from a GUI. Just navigate to the scripts folder and run `python3 ./start_page.py` and select your desired configuration, create your own using the link to the web tool, and select your visualzation type. Then click "Go".
+There is a GUI to help you run the whole radar system and generate real time visualizations from a GUI. Just navigate to the cpp_mmwavec/src folder and run `python3 .scripts/start_page.py` and select your desired configuration, create your own using the link to the web tool, and select your visualzation type. Then click "Go".
 
 ![Visualization GUI](./media/gui.png)
 
