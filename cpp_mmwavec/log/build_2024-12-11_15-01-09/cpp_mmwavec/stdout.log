@@ -1,0 +1,36 @@
+[ 50%] Built target ament_cmake_python_copy_cpp_mmwavec
+[100%] Built target mmwave
+running egg_info
+writing cpp_mmwavec.egg-info/PKG-INFO
+writing dependency_links to cpp_mmwavec.egg-info/dependency_links.txt
+writing top-level names to cpp_mmwavec.egg-info/top_level.txt
+reading manifest file 'cpp_mmwavec.egg-info/SOURCES.txt'
+writing manifest file 'cpp_mmwavec.egg-info/SOURCES.txt'
+[100%] Built target ament_cmake_python_build_cpp_mmwavec_egg
+-- Install configuration: ""
+-- Up-to-date: /home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/lib/cpp_mmwavec/mmwave
+-- Up-to-date: /home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/share/cpp_mmwavec/environment/pythonpath.sh
+-- Up-to-date: /home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/share/cpp_mmwavec/environment/pythonpath.dsv
+-- Up-to-date: /home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/local/lib/python3.10/dist-packages/cpp_mmwavec-0.0.0-py3.10.egg-info
+-- Installing: /home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/local/lib/python3.10/dist-packages/cpp_mmwavec-0.0.0-py3.10.egg-info/SOURCES.txt
+-- Installing: /home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/local/lib/python3.10/dist-packages/cpp_mmwavec-0.0.0-py3.10.egg-info/top_level.txt
+-- Installing: /home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/local/lib/python3.10/dist-packages/cpp_mmwavec-0.0.0-py3.10.egg-info/PKG-INFO
+-- Installing: /home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/local/lib/python3.10/dist-packages/cpp_mmwavec-0.0.0-py3.10.egg-info/dependency_links.txt
+-- Up-to-date: /home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/local/lib/python3.10/dist-packages/cpp_mmwavec
+-- Up-to-date: /home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/local/lib/python3.10/dist-packages/cpp_mmwavec/__init__.py
+Listing '/home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/local/lib/python3.10/dist-packages/cpp_mmwavec'...
+-- Up-to-date: /home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/share/ament_index/resource_index/package_run_dependencies/cpp_mmwavec
+-- Up-to-date: /home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/share/ament_index/resource_index/parent_prefix_path/cpp_mmwavec
+-- Up-to-date: /home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/share/cpp_mmwavec/environment/ament_prefix_path.sh
+-- Up-to-date: /home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/share/cpp_mmwavec/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/share/cpp_mmwavec/environment/path.sh
+-- Up-to-date: /home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/share/cpp_mmwavec/environment/path.dsv
+-- Up-to-date: /home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/share/cpp_mmwavec/local_setup.bash
+-- Up-to-date: /home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/share/cpp_mmwavec/local_setup.sh
+-- Up-to-date: /home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/share/cpp_mmwavec/local_setup.zsh
+-- Up-to-date: /home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/share/cpp_mmwavec/local_setup.dsv
+-- Installing: /home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/share/cpp_mmwavec/package.dsv
+-- Up-to-date: /home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/share/ament_index/resource_index/packages/cpp_mmwavec
+-- Up-to-date: /home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/share/cpp_mmwavec/cmake/cpp_mmwavecConfig.cmake
+-- Up-to-date: /home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/share/cpp_mmwavec/cmake/cpp_mmwavecConfig-version.cmake
+-- Up-to-date: /home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/share/cpp_mmwavec/package.xml

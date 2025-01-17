@@ -1,0 +1,82 @@
+[0.006s] Invoking command in '/home/radar/dev_ws/src/cpp_mmwavec/build/cpp_mmwavec': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/radar/dev_ws/install/mmwave:/opt/ros/humble /usr/bin/cmake /home/radar/dev_ws/src/cpp_mmwavec -DCMAKE_INSTALL_PREFIX=/home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec
+[0.108s] -- The C compiler identification is GNU 11.4.0
+[0.177s] -- The CXX compiler identification is GNU 11.4.0
+[0.187s] -- Detecting C compiler ABI info
+[0.251s] -- Detecting C compiler ABI info - done
+[0.255s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.255s] -- Detecting C compile features
+[0.256s] -- Detecting C compile features - done
+[0.258s] -- Detecting CXX compiler ABI info
+[0.318s] -- Detecting CXX compiler ABI info - done
+[0.322s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.322s] -- Detecting CXX compile features
+[0.322s] -- Detecting CXX compile features - done
+[0.328s] -- Found ament_cmake: 1.3.10 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.438s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.527s] -- Found rclcpp: 16.0.10 (/opt/ros/humble/share/rclcpp/cmake)
+[0.575s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.584s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.598s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.618s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.638s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.689s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.691s] -- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.779s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[0.807s] -- Found FastRTPS: /opt/ros/humble/include  
+[0.840s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.853s] -- Looking for pthread.h
+[0.920s] -- Looking for pthread.h - found
+[0.920s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[0.985s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[0.986s] -- Found Threads: TRUE  
+[1.036s] -- Found rclpy: 3.3.14 (/opt/ros/humble/share/rclpy/cmake)
+[1.147s] -- Configuring done
+[1.152s] -- Generating done
+[1.153s] -- Build files have been written to: /home/radar/dev_ws/src/cpp_mmwavec/build/cpp_mmwavec
+[1.160s] Invoked command in '/home/radar/dev_ws/src/cpp_mmwavec/build/cpp_mmwavec' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/radar/dev_ws/install/mmwave:/opt/ros/humble /usr/bin/cmake /home/radar/dev_ws/src/cpp_mmwavec -DCMAKE_INSTALL_PREFIX=/home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec
+[1.162s] Invoking command in '/home/radar/dev_ws/src/cpp_mmwavec/build/cpp_mmwavec': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/radar/dev_ws/install/mmwave:/opt/ros/humble /usr/bin/cmake --build /home/radar/dev_ws/src/cpp_mmwavec/build/cpp_mmwavec -- -j12 -l12
+[1.207s] [ 50%] Building CXX object CMakeFiles/mmwave.dir/src/radar_system.cpp.o
+[1.217s] [ 50%] Built target ament_cmake_python_copy_cpp_mmwavec
+[1.399s] running egg_info
+[1.400s] creating cpp_mmwavec.egg-info
+[1.400s] writing cpp_mmwavec.egg-info/PKG-INFO
+[1.400s] writing dependency_links to cpp_mmwavec.egg-info/dependency_links.txt
+[1.400s] writing top-level names to cpp_mmwavec.egg-info/top_level.txt
+[1.400s] writing manifest file 'cpp_mmwavec.egg-info/SOURCES.txt'
+[1.402s] reading manifest file 'cpp_mmwavec.egg-info/SOURCES.txt'
+[1.402s] writing manifest file 'cpp_mmwavec.egg-info/SOURCES.txt'
+[1.423s] [ 50%] Built target ament_cmake_python_build_cpp_mmwavec_egg
+[4.173s] [100%] Linking CXX executable mmwave
+[4.289s] [100%] Built target mmwave
+[4.297s] Invoked command in '/home/radar/dev_ws/src/cpp_mmwavec/build/cpp_mmwavec' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/radar/dev_ws/install/mmwave:/opt/ros/humble /usr/bin/cmake --build /home/radar/dev_ws/src/cpp_mmwavec/build/cpp_mmwavec -- -j12 -l12
+[4.330s] Invoking command in '/home/radar/dev_ws/src/cpp_mmwavec/build/cpp_mmwavec': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/radar/dev_ws/install/mmwave:/opt/ros/humble /usr/bin/cmake --install /home/radar/dev_ws/src/cpp_mmwavec/build/cpp_mmwavec
+[4.338s] -- Install configuration: ""
+[4.338s] -- Installing: /home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/lib/cpp_mmwavec/mmwave
+[4.338s] -- Set runtime path of "/home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/lib/cpp_mmwavec/mmwave" to ""
+[4.339s] -- Installing: /home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/share/cpp_mmwavec/environment/pythonpath.sh
+[4.339s] -- Installing: /home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/share/cpp_mmwavec/environment/pythonpath.dsv
+[4.339s] -- Installing: /home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/local/lib/python3.10/dist-packages/cpp_mmwavec-0.0.0-py3.10.egg-info
+[4.339s] -- Installing: /home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/local/lib/python3.10/dist-packages/cpp_mmwavec-0.0.0-py3.10.egg-info/SOURCES.txt
+[4.340s] -- Installing: /home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/local/lib/python3.10/dist-packages/cpp_mmwavec-0.0.0-py3.10.egg-info/top_level.txt
+[4.340s] -- Installing: /home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/local/lib/python3.10/dist-packages/cpp_mmwavec-0.0.0-py3.10.egg-info/PKG-INFO
+[4.340s] -- Installing: /home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/local/lib/python3.10/dist-packages/cpp_mmwavec-0.0.0-py3.10.egg-info/dependency_links.txt
+[4.340s] -- Installing: /home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/local/lib/python3.10/dist-packages/cpp_mmwavec
+[4.340s] -- Installing: /home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/local/lib/python3.10/dist-packages/cpp_mmwavec/__init__.py
+[4.367s] Listing '/home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/local/lib/python3.10/dist-packages/cpp_mmwavec'...
+[4.367s] Compiling '/home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/local/lib/python3.10/dist-packages/cpp_mmwavec/__init__.py'...
+[4.370s] -- Installing: /home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/share/ament_index/resource_index/package_run_dependencies/cpp_mmwavec
+[4.371s] -- Installing: /home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/share/ament_index/resource_index/parent_prefix_path/cpp_mmwavec
+[4.371s] -- Installing: /home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/share/cpp_mmwavec/environment/ament_prefix_path.sh
+[4.371s] -- Installing: /home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/share/cpp_mmwavec/environment/ament_prefix_path.dsv
+[4.371s] -- Installing: /home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/share/cpp_mmwavec/environment/path.sh
+[4.371s] -- Installing: /home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/share/cpp_mmwavec/environment/path.dsv
+[4.371s] -- Installing: /home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/share/cpp_mmwavec/local_setup.bash
+[4.372s] -- Installing: /home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/share/cpp_mmwavec/local_setup.sh
+[4.372s] -- Installing: /home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/share/cpp_mmwavec/local_setup.zsh
+[4.372s] -- Installing: /home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/share/cpp_mmwavec/local_setup.dsv
+[4.372s] -- Installing: /home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/share/cpp_mmwavec/package.dsv
+[4.372s] -- Installing: /home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/share/ament_index/resource_index/packages/cpp_mmwavec
+[4.372s] -- Installing: /home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/share/cpp_mmwavec/cmake/cpp_mmwavecConfig.cmake
+[4.372s] -- Installing: /home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/share/cpp_mmwavec/cmake/cpp_mmwavecConfig-version.cmake
+[4.372s] -- Installing: /home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/share/cpp_mmwavec/package.xml
+[4.374s] Invoked command in '/home/radar/dev_ws/src/cpp_mmwavec/build/cpp_mmwavec' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/radar/dev_ws/install/mmwave:/opt/ros/humble /usr/bin/cmake --install /home/radar/dev_ws/src/cpp_mmwavec/build/cpp_mmwavec

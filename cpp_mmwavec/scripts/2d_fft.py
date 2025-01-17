@@ -6,12 +6,13 @@ import matplotlib.pyplot as plt
 from std_msgs.msg import Int16MultiArray
 import pprint
 from scipy.ndimage import uniform_filter
+import argparse
 
 
 VERBOSE = True
 
 class MmwaveFFTviz(Node):
-    def __init__(self):
+    def __init__(self, frame_kwargs=None):
         super().__init__('mmwave_fftviz')
         self.subscription = self.create_subscription(
             Int16MultiArray,
@@ -19,18 +20,20 @@ class MmwaveFFTviz(Node):
             self.callback,
             10)
         self.subscription  # prevent unused variable warning
+        if frame_kwargs is not None:
+            self.frame_kwargs = frame_kwargs
+        
 
         if VERBOSE:
             self.get_logger().info('Subscribed to mmwave radar_data')
 
-        self.frame_kwargs = None
         fft_mag_shape = (32,256)
         self.fft_mag = np.zeros(fft_mag_shape, dtype=np.float32)
         self.pp = pprint.PrettyPrinter(width=100)
 
-        # This determines if the plot is xy or range-angle(polar)
+        
         self.plot = 'xy'
-
+        plt.ion()
 
         if self.plot == 'xy':
             self.fig, self.ax = plt.subplots()  # Set up the Cartesian plot
@@ -41,33 +44,6 @@ class MmwaveFFTviz(Node):
             self.cax = self.ax.imshow(self.fft_mag, aspect='auto', origin='lower', cmap='viridis')
             self.fig.colorbar(self.cax)  # Add colorbar once       
 
-    def set_radar_cfg(self):
-        # Configuration for radar parameters
-        self.frame_kwargs = {
-            'samples_per_chirp': 256,
-            'n_receivers': 4,
-            'n_tdm': 3,
-            'n_chirps_per_frame': 60,
-        }
-                # speed of wave propagation
-        # c = 299792458 # m/s
-
-        # # compute ADC sample period T_c in msec
-        # # adc_sample_period = 1 / adc_sample_rate * num_adc_samples # msec
-        # adc_sample_period = 1 / 9499 * 304 # msec
-
-
-        # # next compute the Bandwidth in GHz
-        # bandwidth = adc_sample_period * 100 # GHz
-
-        # # Coompute range resolution in meters
-        # self.range_resolution = c / (2 * (bandwidth * 1e9)) # meters
-
-        # self.max_range = self.range_resolution * 304
-        # print(f'MAX RANGE: {self.max_range}')
-
-        if VERBOSE:
-            self.get_logger().info(str(self.frame_kwargs))
     
     def apply_window(self, data, window_type='blackman', axis=-1):
         """
@@ -95,22 +71,21 @@ class MmwaveFFTviz(Node):
         fft_range_doppler = np.fft.fft(fft_range, axis=0)
 
         
-        # perform FFT over azimuth, zero pad to size n=32 
+        # perform FFT over azimuth 
         az_fft = np.fft.fftshift(np.fft.fft(fft_range_doppler,n=32, axis=2), axes=2)
 
         # Compute Power Spectrum
         az_power = np.abs(az_fft)**2
         # Setting to true onyl detects moving objects
-        only_moving = False
+        only_moving = True
         if only_moving:
-            final = (np.sum(az_power[1:,:,:], axis=0))
+            final = (np.sum(az_power[2:,:,:], axis=0))
         else:
-            final = np.log2(np.sum(az_power, axis=0))  
+            final = (np.sum(az_power[:,:,:], axis=0))
 
-        # Changing these values changes the threshold and detection window for detected objects
-        cfarred = self.ca_cfar_detection_2d_optimized(final, 35, 5, 30) 
+        cfarred = self.ca_cfar_detection_2d_optimized(final, 35, 5, 35) # Changing these values changes the threshold for detected objects
         
-        return cfarred
+        return final
 
     def ca_cfar_detection_2d_optimized(self, data, num_train, num_guard, threshold_factor):
         num_rows, num_cols = data.shape
@@ -144,7 +119,7 @@ class MmwaveFFTviz(Node):
         if not self.frame_kwargs:
             self.set_radar_cfg()
 
-        adc_samples = reshape_frame(data.data, **self.frame_kwargs)
+        adc_samples = self.reshape_frame(data.data)
 
         # Update the FFT magnitude and frequency for plotting
         self.fft_mag = self.fft_process(adc_samples)
@@ -199,25 +174,52 @@ class MmwaveFFTviz(Node):
 
         plt.pause(0.01)
 
-def reshape_frame(data, samples_per_chirp, n_receivers, n_tdm, n_chirps_per_frame):
-    data = np.array(data)
-    
-    _data = data.reshape(-1, 8)
-    _data = _data[:, :4] + 1j * _data[:, 4:]
-    _data = _data.reshape(n_chirps_per_frame, samples_per_chirp, n_receivers)
+    def reshape_frame(self, data):
+        samples_per_chirp=self.frame_kwargs['samples_per_chirp']
+        n_receivers=self.frame_kwargs['n_receivers']
+        n_tdm = self.frame_kwargs['n_tx']
+        n_chirps_per_frame = self.frame_kwargs["n_chirps_per_frame"]
+        data = np.array(data)
+        
+        _data = data.reshape(-1, 8)
+        _data = _data[:, :4] + 1j * _data[:, 4:]
+        _data = _data.reshape(n_chirps_per_frame, samples_per_chirp, n_receivers)
 
-    #deinterleve if theres mulitple transmitting antennas
-    if n_tdm > 1:
-        _data_i = [_data[i::n_tdm, :, :] for i in range(n_tdm)]
-        _data = np.concatenate(_data_i, axis=-1)
-    
-    return _data
+        #deinterleve if theres TDM
+        if n_tdm > 1:
+            _data_i = [_data[i::n_tdm, :, :] for i in range(n_tdm)]
+            _data = np.concatenate(_data_i, axis=-1)
+        
+        return _data
+
+def parse_arguments():
+    """Parse command-line arguments."""
+    parser = argparse.ArgumentParser(description='Initialize Mmwave FFT Visualization with command line parameters.')
+    parser.add_argument('--samples_per_chirp', type=int, default=64, help='Number of samples per chirp')
+    parser.add_argument('--n_receivers', type=int, default=4, help='Number of receivers')
+    parser.add_argument('--n_tx', type=int, default=2, help='Number of tx')
+    parser.add_argument('--n_chirps_per_frame', type=int, default=128, help='Number of chirps per frame')
+
+    args = parser.parse_args()
+
+    # Convert parsed arguments into a dictionary
+    frame_kwargs = {
+        'samples_per_chirp': args.samples_per_chirp,
+        'n_receivers': args.n_receivers,
+        'n_tx': args.n_tx,
+        'n_chirps_per_frame': args.n_chirps_per_frame,
+    }
+
+
+    return frame_kwargs
 
 def main(args=None):
     rclpy.init(args=args)
 
-    fft_viz = MmwaveFFTviz()
+    frame_kwargs = parse_arguments()
 
+    fft_viz = MmwaveFFTviz(frame_kwargs=frame_kwargs)
+    
     try:
         while rclpy.ok():
             rclpy.spin_once(fft_viz, timeout_sec=0.01)

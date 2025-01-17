@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import argparse
 import rclpy
 from rclpy.node import Node
 import numpy as np
@@ -17,8 +18,10 @@ class FrameBuffer():
                      np.zeros(framesize),
                     ]
 
+        self.open = False
         self.dirty = True
         self.frontbuff = 0
+
 
     def write_frame(self, new_frame):
         backbuff = (self.frontbuff+1)%2
@@ -55,10 +58,18 @@ def imshow_thread(framebuffer, max_val=18.0, cmap=cv2.COLORMAP_WINTER):
             cv2.imshow('fft_viz', img)
         cv2.waitKey(1)
 
+        if cv2.getWindowProperty('fft_viz', cv2.WND_PROP_VISIBLE) > 1:
+            framebuffer.open = True
+
+        if cv2.getWindowProperty('fft_viz', cv2.WND_PROP_VISIBLE) < 1 and framebuffer.open==True:
+            print("Window closed, stopping visualization thread.")
+            framebuffer.open = False
+            break
+
     cv2.destroyAllWindows()
 
 
-def reshape_frame(data, samples_per_chirp, n_receivers, n_tdm, n_chirps_per_frame):
+def reshape_frame(data, samples_per_chirp, n_receivers, n_tx, n_chirps_per_frame):
     data = np.array(data)
     
     _data = data.reshape(-1, 8)
@@ -67,15 +78,19 @@ def reshape_frame(data, samples_per_chirp, n_receivers, n_tdm, n_chirps_per_fram
 
 
     #deinterleve if theres TDM
-    if n_tdm > 1:
-        _data_i = [_data[i::n_tdm, :, :] for i in range(n_tdm)]
+    if n_tx > 1:
+        _data_i = [_data[i::n_tx, :, :] for i in range(n_tx)]
         _data = np.concatenate(_data_i, axis=-1)
     
     return _data
 
 class MmwaveFFTviz(Node):
-    def __init__(self, fb):
+    def __init__(self, fb, frame_kwargs=None):
         super().__init__('mmwave_fftviz')
+        if frame_kwargs == None:
+            print("No config parameters given")
+            return
+        self.frame_kwargs = frame_kwargs
         self.subscription = self.create_subscription(
             Int16MultiArray,
             'radar_data',
@@ -88,27 +103,12 @@ class MmwaveFFTviz(Node):
 
         self.windowCreated = False
         self.fb = fb
-        self.frame_kwargs = None
         self.pp = pprint.PrettyPrinter(width=100)
 
     def set_radar_cfg(self):
-        # params = self.get_parameters('')
-        # params_dict = {}
-        # for param in params:
-        #     params_dict[param.name] = param.value
-        # self.get_logger().info("Radar Params: %r" % params_dict)
+        
 
-        # samples_per_chirp = params_dict['adcSamples']
-        # n_tdm = len(params_dict['chirps'])
-        # n_rx = params_dict['rx1'] + params_dict['rx2'] + params_dict['rx3'] + params_dict['rx4']
-        # n_chirps_per_frame = params_dict['numChirps']
-
-        self.frame_kwargs = {
-            'samples_per_chirp': 256,
-            'n_receivers': 4,
-            'n_tdm': 3,
-            'n_chirps_per_frame': 60,
-        }
+        
 
         if VERBOSE:
             self.get_logger().info(str(self.frame_kwargs))
@@ -157,13 +157,34 @@ class MmwaveFFTviz(Node):
 
         self.fb.write_frame(fft_mag)
 
+def parse_arguments():
+    """Parse command-line arguments."""
+    parser = argparse.ArgumentParser(description='Initialize Mmwave FFT Visualization with command line parameters.')
+    parser.add_argument('--samples_per_chirp', type=int, default=64, help='Number of samples per chirp')
+    parser.add_argument('--n_receivers', type=int, default=4, help='Number of receivers')
+    parser.add_argument('--n_tx', type=int, default=2, help='Number of tx')
+    parser.add_argument('--n_chirps_per_frame', type=int, default=128, help='Number of chirps per frame')
 
+    args = parser.parse_args()
+
+    # Convert parsed arguments into a dictionary
+    frame_kwargs = {
+        'samples_per_chirp': args.samples_per_chirp,
+        'n_receivers': args.n_receivers,
+        'n_tx': args.n_tx,
+        'n_chirps_per_frame': args.n_chirps_per_frame,
+    }
+
+
+    return frame_kwargs
 
 def main(args=None):
     rclpy.init(args=args)
 
+    frame_kwargs = parse_arguments()
+
     fb = FrameBuffer()
-    fft_viz = MmwaveFFTviz(fb)
+    fft_viz = MmwaveFFTviz(fb, frame_kwargs)
 
     ui_thread = threading.Thread(target=imshow_thread, args=(fb,))
     ui_thread.setDaemon(True)

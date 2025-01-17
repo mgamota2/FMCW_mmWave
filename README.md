@@ -18,6 +18,12 @@ I recommend reading the ROS 2 documentation to set up your ROS 2 environment and
 
 ![Radar System](./media/radar_system.jpg)
 
+## Real Time Visualization GUI
+
+There is a GUI to help you run the whole radar system and generate real time visualizations from a GUI. Just navigate to the scripts folder and run `python3 ./start_page.py` and select your desired configuration, create your own using the link to the web tool, and select your visualzation type. Then click "Go".
+
+![Visualization GUI](./media/gui.png)
+
 ## How to use
 Once ROS 2 has been configured and you have added the cpp_mmwavec package files to the src of your ROS 2 workspace, follow the below instructions.
 
@@ -31,9 +37,9 @@ This ROS 2 package is named "cpp_mmwavec". To change the name, file and folder n
 
 4. Finally `ros2 run cpp_mmwavec mmwave [config name]`
 
-Regarding the config name, if the config is "short_range.cfg" , the config name is "short_range"
+Regarding the config name, if the config is "short_range.cfg" , the config name argument is "short_range"
 
-## Real-time Visualizations
+## Manual Real-time Visualizations
 To use one of the sample real-time visualizations, open a new terminal tab or window at `cpp_mmwavec/scripts` and use `python3 ./doppler.py` to display a range-doppler plot. Included visualization scripts include 
 
 1. Range-Azimuth FFT: `2d_fft.py`
@@ -80,7 +86,7 @@ if __name__ == '__main__':
 ## Recording data
 To record data, open a new terminal tab or window use `ros2 bag record /radar_data -o [path_to_save]`. This will create a folder at the path specified and create a `metadata.yml` file and a .db3 file with all of the data from the radar.
 
-The is an example Python script to open the .db3 file and plot every 200 frames of a range-doppler plot: `./cpp_mmwavec/post_processing/doppler_plot.py`
+This is an example Python script to open the .db3 file and plot every 200 frames of a range-doppler plot: `./cpp_mmwavec/post_processing/doppler_plot.py`
 
 ## Configurations
 The IWR1443BOOST radar board has configurable chirps. The ADC sampling rate, number of chirps per frame, and product of receiving and transmitting antennas impact the detection range, velocity, and angle of arrival calculations, respectively. These, along with other parameters can be modified based on the use case. I include 3 configurations in the `./cpp_mmwavec/src/configs` folder as examples.

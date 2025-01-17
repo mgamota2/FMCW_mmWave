@@ -255,9 +255,9 @@ class mmWave_Sensor{
                     }
                 }
             }
-            // std::cout<<"chirps: "<<chirps<<std::endl;
-            // std::cout<<"samples: "<<samples<<std::endl;
-            // std::cout<<"lanes: "<<lanes<<std::endl;
+            std::cout<<"chirps: "<<chirps<<std::endl;
+            std::cout<<"samples: "<<samples<<std::endl;
+            std::cout<<"lanes: "<<lanes<<std::endl;
 
 
             frame_data.close();

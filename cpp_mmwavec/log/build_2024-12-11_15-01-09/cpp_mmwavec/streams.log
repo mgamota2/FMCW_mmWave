@@ -1,0 +1,40 @@
+[0.008s] Invoking command in '/home/radar/dev_ws/src/cpp_mmwavec/build/cpp_mmwavec': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/radar/dev_ws/install/mmwave:/opt/ros/humble /usr/bin/cmake --build /home/radar/dev_ws/src/cpp_mmwavec/build/cpp_mmwavec -- -j12 -l12
+[0.071s] [ 50%] Built target ament_cmake_python_copy_cpp_mmwavec
+[0.071s] [100%] Built target mmwave
+[0.245s] running egg_info
+[0.245s] writing cpp_mmwavec.egg-info/PKG-INFO
+[0.245s] writing dependency_links to cpp_mmwavec.egg-info/dependency_links.txt
+[0.245s] writing top-level names to cpp_mmwavec.egg-info/top_level.txt
+[0.247s] reading manifest file 'cpp_mmwavec.egg-info/SOURCES.txt'
+[0.247s] writing manifest file 'cpp_mmwavec.egg-info/SOURCES.txt'
+[0.269s] [100%] Built target ament_cmake_python_build_cpp_mmwavec_egg
+[0.278s] Invoked command in '/home/radar/dev_ws/src/cpp_mmwavec/build/cpp_mmwavec' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/radar/dev_ws/install/mmwave:/opt/ros/humble /usr/bin/cmake --build /home/radar/dev_ws/src/cpp_mmwavec/build/cpp_mmwavec -- -j12 -l12
+[0.326s] Invoking command in '/home/radar/dev_ws/src/cpp_mmwavec/build/cpp_mmwavec': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/radar/dev_ws/install/mmwave:/opt/ros/humble /usr/bin/cmake --install /home/radar/dev_ws/src/cpp_mmwavec/build/cpp_mmwavec
+[0.334s] -- Install configuration: ""
+[0.334s] -- Up-to-date: /home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/lib/cpp_mmwavec/mmwave
+[0.335s] -- Up-to-date: /home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/share/cpp_mmwavec/environment/pythonpath.sh
+[0.335s] -- Up-to-date: /home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/share/cpp_mmwavec/environment/pythonpath.dsv
+[0.335s] -- Up-to-date: /home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/local/lib/python3.10/dist-packages/cpp_mmwavec-0.0.0-py3.10.egg-info
+[0.335s] -- Installing: /home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/local/lib/python3.10/dist-packages/cpp_mmwavec-0.0.0-py3.10.egg-info/SOURCES.txt
+[0.335s] -- Installing: /home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/local/lib/python3.10/dist-packages/cpp_mmwavec-0.0.0-py3.10.egg-info/top_level.txt
+[0.335s] -- Installing: /home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/local/lib/python3.10/dist-packages/cpp_mmwavec-0.0.0-py3.10.egg-info/PKG-INFO
+[0.335s] -- Installing: /home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/local/lib/python3.10/dist-packages/cpp_mmwavec-0.0.0-py3.10.egg-info/dependency_links.txt
+[0.335s] -- Up-to-date: /home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/local/lib/python3.10/dist-packages/cpp_mmwavec
+[0.335s] -- Up-to-date: /home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/local/lib/python3.10/dist-packages/cpp_mmwavec/__init__.py
+[0.362s] Listing '/home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/local/lib/python3.10/dist-packages/cpp_mmwavec'...
+[0.365s] -- Up-to-date: /home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/share/ament_index/resource_index/package_run_dependencies/cpp_mmwavec
+[0.365s] -- Up-to-date: /home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/share/ament_index/resource_index/parent_prefix_path/cpp_mmwavec
+[0.365s] -- Up-to-date: /home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/share/cpp_mmwavec/environment/ament_prefix_path.sh
+[0.365s] -- Up-to-date: /home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/share/cpp_mmwavec/environment/ament_prefix_path.dsv
+[0.365s] -- Up-to-date: /home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/share/cpp_mmwavec/environment/path.sh
+[0.365s] -- Up-to-date: /home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/share/cpp_mmwavec/environment/path.dsv
+[0.365s] -- Up-to-date: /home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/share/cpp_mmwavec/local_setup.bash
+[0.365s] -- Up-to-date: /home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/share/cpp_mmwavec/local_setup.sh
+[0.365s] -- Up-to-date: /home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/share/cpp_mmwavec/local_setup.zsh
+[0.366s] -- Up-to-date: /home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/share/cpp_mmwavec/local_setup.dsv
+[0.366s] -- Installing: /home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/share/cpp_mmwavec/package.dsv
+[0.366s] -- Up-to-date: /home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/share/ament_index/resource_index/packages/cpp_mmwavec
+[0.366s] -- Up-to-date: /home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/share/cpp_mmwavec/cmake/cpp_mmwavecConfig.cmake
+[0.367s] -- Up-to-date: /home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/share/cpp_mmwavec/cmake/cpp_mmwavecConfig-version.cmake
+[0.367s] -- Up-to-date: /home/radar/dev_ws/src/cpp_mmwavec/install/cpp_mmwavec/share/cpp_mmwavec/package.xml
+[0.367s] Invoked command in '/home/radar/dev_ws/src/cpp_mmwavec/build/cpp_mmwavec' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/radar/dev_ws/install/mmwave:/opt/ros/humble /usr/bin/cmake --install /home/radar/dev_ws/src/cpp_mmwavec/build/cpp_mmwavec
